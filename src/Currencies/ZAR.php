@@ -2,25 +2,26 @@
 
 namespace SSD\Currency\Currencies;
 
-class GBP extends BaseCurrency implements CurrencyInterface
+
+class ZAR extends BaseCurrency implements CurrencyInterface
 {
     public static function symbol(): string
     {
-        return '£';
+        return 'R';
     }
 
     public static function code(): string
     {
-        return 'GBP';
+        return 'ZAR';
     }
 
     public static function name(): string
     {
-        return 'Pound';
+        return 'South African Rand';
     }
 
     public function format(int $value, bool $inCents = false)
     {
-        return self::symbol() . number_format($value/($inCents ? 100 : 1), 0);
+        return self::symbol() . number_format($value/($inCents ? 100 : 1), 0, '.', ' ');
     }
 }

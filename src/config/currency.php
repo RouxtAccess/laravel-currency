@@ -20,7 +20,7 @@ return [
     | This value represents default currency.
     */
 
-    "default" => \SSD\Currency\Currencies\GBP::code(),
+    "default" => \SSD\Currency\Currencies\ZAR::code(),
 
     /*
     |--------------------------------------------------------------------------
@@ -31,6 +31,7 @@ return [
     */
 
     "currencies" => [
+        \SSD\Currency\Currencies\ZAR::class,
         \SSD\Currency\Currencies\GBP::class,
         \SSD\Currency\Currencies\USD::class,
         \SSD\Currency\Currencies\EUR::class,
@@ -45,5 +46,5 @@ return [
     | are stored as integer or float / decimal.
     */
 
-    "value_as_integer" => false,
+    "value_as_integer" => true,
 ];

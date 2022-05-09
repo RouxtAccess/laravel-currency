@@ -2,25 +2,25 @@
 
 namespace SSD\Currency\Currencies;
 
-class USD extends BaseCurrency
+class USD extends BaseCurrency implements CurrencyInterface
 {
-    /**
-     * Get symbol.
-     *
-     * @return string
-     */
     public static function symbol(): string
     {
         return '$';
     }
 
-    /**
-     * Get code.
-     *
-     * @return string
-     */
     public static function code(): string
     {
         return 'USD';
+    }
+
+    public static function name(): string
+    {
+        return 'United States Dollar';
+    }
+
+    public function format(int $value, bool $inCents = false)
+    {
+        return self::symbol() . number_format($value/($inCents ? 100 : 1), 0);
     }
 }

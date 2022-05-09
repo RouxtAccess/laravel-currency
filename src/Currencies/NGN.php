@@ -2,21 +2,25 @@
 
 namespace SSD\Currency\Currencies;
 
-class GBP extends BaseCurrency implements CurrencyInterface
+
+use SSD\Currency\Currencies\BaseCurrency;
+
+class NGN extends BaseCurrency implements CurrencyInterface
 {
+
     public static function symbol(): string
     {
-        return '£';
+        return '₦';
     }
 
     public static function code(): string
     {
-        return 'GBP';
+        return 'NGN';
     }
 
     public static function name(): string
     {
-        return 'Pound';
+        return 'Naira';
     }
 
     public function format(int $value, bool $inCents = false)

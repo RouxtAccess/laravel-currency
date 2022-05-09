@@ -2,25 +2,26 @@
 
 namespace SSD\Currency\Currencies;
 
-class EUR extends BaseCurrency
+class EUR extends BaseCurrency implements CurrencyInterface
 {
-    /**
-     * Get symbol.
-     *
-     * @return string
-     */
+
     public static function symbol(): string
     {
         return '€';
     }
 
-    /**
-     * Get code.
-     *
-     * @return string
-     */
     public static function code(): string
     {
         return 'EUR';
+    }
+
+    public static function name(): string
+    {
+        return 'Euro';
+    }
+
+    public function format(int $value, bool $inCents = false)
+    {
+        return self::symbol() . number_format($value/($inCents ? 100 : 1), 0);
     }
 }
